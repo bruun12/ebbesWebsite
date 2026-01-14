@@ -26,6 +26,7 @@
 }
 
 .service-card {
+    height: 20rem;
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
@@ -179,5 +180,9 @@
 @media (max-width: 768px) {
     .contact-info, .about-content {
         flex-direction: column;
+    }
+
+    .service-card {
+        height: auto;
     }
 }

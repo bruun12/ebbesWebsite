@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butiksdetektiv - Professionel butiksovervågning i hele Danmark</title>
-    <link rel="stylesheet" th:href="@{/css/main.css}">
-    <link rel="stylesheet" th:href="@{/css/header.css}">
-    <link rel="stylesheet" th:href="@{/css/hero.css}">
-    <link rel="stylesheet" th:href="@{/css/sections.css}">
-    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/styling/main.css}">
+    <link rel="stylesheet" th:href="@{/styling/header.css}">
+    <link rel="stylesheet" th:href="@{/styling/hero.css}">
+    <link rel="stylesheet" th:href="@{/styling/sections.css}">
+    <link rel="stylesheet" th:href="@{/styling/footer.css}">
 </head>
 <body>
 <!-- Header -->
@@ -59,7 +59,7 @@
                 </div>
                 <div class="service-content">
                     <h3>Butiksovervågning</h3>
-                    <p>Vores butiksdetektiver arbejder undercover i din butik for at identificere tyveri, uærlighed blandt ansatte og systematisk svindel.</p>
+                    <p>Vores butiksovervågning afslører tyveri og svindel gennem undercover-detektiver, der arbejder uset i din butik. Vi identificerer både kundetyveri og uærlighed blandt ansatte, dokumenterer beviser juridisk sikkert og giver dig konkrete anbefninger til forbedret sikkerhed.</p>
                 </div>
             </div>
 
@@ -68,9 +68,8 @@
                     <i class="fas fa-video"></i>
                 </div>
                 <div class="service-content">
-                    <h3>Overvågningsrådgivning</h3>
-                    <p>Vi rådgiver om effektiv brug af overvågningskameraer, alarmanlæg og anden sikkerhedsteknologi til at minimere tyveri.</p>
-                </div>
+                    <h3>Eventvagt</h3>
+                    <p>Vores eventvagt-service sikrer tryghed til alle typer arrangementer. Certificerede vagter håndterer adgangskontrol, publikum og sikkerhed, så arrangører kan fokusere på selve eventet. Vi tilpasser vores indsats efter størrelse og karakter af hvert arrangement.</p>                </div>
             </div>
 
             <div class="service-card">
@@ -78,8 +77,8 @@
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <div class="service-content">
-                    <h3>Butiksanalyser</h3>
-                    <p>Vi analyserer dit butiksdata for at identificere mistænkelige mønstre og uforklarlige lager- eller regnskabsforskelle.</p>
+                    <h3>Fast overvågning</h3>
+                    <p>Fast overvågning sikrer kontinuerlig tilstedeværelse af vores detektiver i din butik. Vi arbejder over længere perioder for at afsløre systematisk tyveri, identificere mønstre og give dig fuld tryghed dag efter dag.</p>
                 </div>
             </div>
 
@@ -88,28 +87,8 @@
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="service-content">
-                    <h3>Personaleundersøgelser</h3>
-                    <p>Diskrete baggrundstjek og løbende overvågning af ansatte med adgang til værdifulde varer eller penge.</p>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-balance-scale"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Retssagstøtte</h3>
-                    <p>Vi samler beviser og leverer ekspertvidneudsagn til retssager om butikstyveri og erhvervssvindel.</p>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Forebyggende tiltag</h3>
-                    <p>Vi udvikler skræddersyede sikkerhedsprocedurer og træner dit personale i at forebygge tyveri og svindel.</p>
+                    <h3>Service vagt</h3>
+                    <p>Service vagt kombinerer sikkerhed med kundeservice. Vores vagter fungerer som både synlige sikkerhedsprofessionelle og hjælpsomme butiksambassadører, der skaber tryghed for kunder og personale samtidig.</p>
                 </div>
             </div>
         </div>
@@ -227,66 +206,5 @@
     </div>
 </footer>
 
-<script>
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector(".logo");
-    const mainNav = document.getElementById('mainNav');
-
-    mobileMenuBtn.addEventListener('click', function() {
-        mainNav.classList.toggle('active');
-        const icon = mobileMenuBtn.querySelector('i');
-        if (mainNav.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Close mobile menu if open
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Form submission
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        // In a real implementation, this would send the data to a server
-        // For this demo, we'll just show an alert
-        alert(`Tak for din besked, ${name}! Vi vender tilbage til dig på ${email} inden for 24 timer.`);
-
-        // Reset form
-        contactForm.reset();
-    });
-</script>
-</body>
+<script type="module" th:src="@{/js/index.js}"></script></body>
 </html>
