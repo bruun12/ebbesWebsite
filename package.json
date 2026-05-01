@@ -1,0 +1,15 @@
+{
+  "name": "butiksdetektiv-Nord",
+  "version": "1.0.0",
+  "description": "Butiksdetektiv-Nord",
+  "main": "server.js",
+  "scripts": {
+    "start": "bun run server.js",
+    "dev": "bun --watch run server.js"
+  },
+  "author": "8ruun",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
